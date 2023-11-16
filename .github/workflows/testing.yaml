@@ -32,7 +32,7 @@ jobs:
         $username = 'Swara'
         $password = 'Ss987654321@!'
         $localPath = 'C:\Users\ShivaniSharma\OneDrive - cloudEQ\Desktop\New folder\try.ps1'
-        $remotePath = "C:\Windows"
+        $remotePath = "C:\"
         $securePassword = ConvertTo-SecureString -String $password -AsPlainText -Force
         $credential = New-Object System.Management.Automation.PSCredential -ArgumentList $username, $securePassword
         Copy-Item -Path $localPath -Destination $remotePath -Recurse -verbose
