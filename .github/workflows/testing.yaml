@@ -17,7 +17,7 @@ jobs:
     - name: Set up WinRM
       run: |
         # Replace these values with your server information
-        $serverAddress = '10.0.0.4'
+        $serverAddress = '20.244.39.41'
         $username = 'Swara'
         $password = 'Ss987654321@!'
         # Configure WinRM
@@ -28,14 +28,14 @@ jobs:
     - name: Copy script files to the Windows server
       run: |
         # Replace these values with your server information and script file paths
-        $serverAddress = '98.70.56.69'
+        $serverAddress = '20.244.39.41'
         $username = 'Swara'
         $password = 'Ss987654321@!'
         $localPath = './try.ps1'
-        $remotePath = "C:\Users\ShivaniSharma\OneDrive - cloudEQ\Desktop\New folder"
+        $remotePath = "C:\Windows\System32"
         $securePassword = ConvertTo-SecureString -String $password -AsPlainText -Force
         $credential = New-Object System.Management.Automation.PSCredential -ArgumentList $username, $securePassword
-        Copy-Item -Path C:\Users\ShivaniSharma\OneDrive - cloudEQ\Desktop\New folder -Destination "\\$serverAddress\$remotePath" -Recurse -verbose
+        Copy-Item -Path "C:\Users\ShivaniSharma\OneDrive - cloudEQ\Desktop\New folder" -Destination "C:\Windows\System32" -Recurse -verbose
       # You can add additional steps to run the scripts on the server if needed
     - name: Clean up WinRM configuration
       run: |
