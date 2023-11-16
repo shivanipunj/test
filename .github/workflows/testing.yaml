@@ -31,11 +31,11 @@ jobs:
         $serverAddress = '20.244.39.41'
         $username = 'Swara'
         $password = 'Ss987654321@!'
-        $localPath = './try.ps1'
-        $remotePath = "C:\Windows\System32"
+        # $localPath = './try.ps1'
+        # $remotePath = "C:\Windows\System32"
         $securePassword = ConvertTo-SecureString -String $password -AsPlainText -Force
         $credential = New-Object System.Management.Automation.PSCredential -ArgumentList $username, $securePassword
-        Copy-Item -Path "C:\Users\ShivaniSharma\Downloads\try.ps1" -Destination "C:\Windows\System32" -Recurse -verbose
+        Copy-Item -Path "C:\Users\ShivaniSharma\Downloads\try.ps1" -Destination "C:\Users" -Recurse -verbose
       # You can add additional steps to run the scripts on the server if needed
     - name: Clean up WinRM configuration
       run: |
